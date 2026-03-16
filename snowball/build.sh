@@ -18,9 +18,9 @@ echo "CFLAGS: ${CFLAGS}"
 
 LIBSTEMMER="libstemmer_c-3.0.1"
 [ ! -d "${LIBSTEMMER}.tar.gz" ] && tar xzf "${LIBSTEMMER}.tar.gz"
-SRCS=($(${MAKE} LIBSTEMMER=${LIBSTEMMER} srcs))
+SRCS=($(${MAKE} --no-print-directory LIBSTEMMER=${LIBSTEMMER} srcs))
 SRCS=( "${SRCS[@]/#/${LIBSTEMMER}/}" )
-INCLUDES=($(${MAKE} LIBSTEMMER=${LIBSTEMMER} includes))
+INCLUDES=($(${MAKE} --no-print-directory LIBSTEMMER=${LIBSTEMMER} includes))
 INCLUDES=( "${INCLUDES[@]/#/${LIBSTEMMER}/}" )
 
 OBJS=()
