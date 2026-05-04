@@ -43,7 +43,7 @@ done
 if $SUPPORTS_SHARED_LIBRARIES; then
   case "$(uname -s)" in
     Darwin)
-      ${CC} -shared -o dllstemmer.o -Wl,-all_load libstemmer.a
+      ${CC} -shared -o dllstemmer.so -Wl,-all_load libstemmer.a
       echo " LD dllstemmer.so"
       ;;
     *)
